@@ -1,3 +1,5 @@
+import java.time.Year;
+
 public class functions {
     public static void determ(String name){
         if((name.substring(name.length() - 1).equals("а"))){
@@ -27,34 +29,20 @@ public class functions {
                 String year = Integer.toString(a);
                 switch (year.substring(year.length() - 1)) {
                     case ("0"):
+                    case ("5"):
+                    case ("6"):
+                    case ("7"):
+                    case ("8"):
+                    case ("9"):
                         System.out.println(a + " лет");
                         break;
                     case ("1"):
                         System.out.println(a + " год");
                         break;
                     case ("2"):
-                        System.out.println(a + " годa");
-                        break;
                     case ("3"):
-                        System.out.println(a + " годa");
-                        break;
                     case ("4"):
                         System.out.println(a + " годa");
-                        break;
-                    case ("5"):
-                        System.out.println(a + " лет");
-                        break;
-                    case ("6"):
-                        System.out.println(a + " лет");
-                        break;
-                    case ("7"):
-                        System.out.println(a + " лет");
-                        break;
-                    case ("8"):
-                        System.out.println(a + " лет");
-                        break;
-                    case ("9"):
-                        System.out.println(a + " лет");
                         break;
                     default:
                         System.out.println("Возникла ошибка с определением");
@@ -64,9 +52,10 @@ public class functions {
     }
 
     public static void age(String year){
+        int todayYear = Year.now().getValue();
         try{
             int i = Integer.parseInt(year.trim());
-            form(2024-i);
+            form(todayYear-i);
         }
         catch (NumberFormatException nfe) {
             System.out.println("Возникла ошибка с определением возраста");
