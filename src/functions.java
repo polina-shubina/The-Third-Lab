@@ -28,20 +28,20 @@ public class functions {
             } else {
                 String year = Integer.toString(a);
                 switch (year.substring(year.length() - 1)) {
-                    case ("0"):
-                    case ("5"):
-                    case ("6"):
-                    case ("7"):
-                    case ("8"):
-                    case ("9"):
+                    case "0":
+                    case "5":
+                    case "6":
+                    case "7":
+                    case "8":
+                    case "9":
                         System.out.println(a + " лет");
                         break;
-                    case ("1"):
+                    case "1":
                         System.out.println(a + " год");
                         break;
-                    case ("2"):
-                    case ("3"):
-                    case ("4"):
+                    case "2":
+                    case "3":
+                    case "4":
                         System.out.println(a + " годa");
                         break;
                     default:
