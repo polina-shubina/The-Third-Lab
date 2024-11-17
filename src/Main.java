@@ -29,8 +29,8 @@ public class Main {
         //махинации с др
         if(functions.checkF(fio)) {
             System.out.println("Дата рождения: " + dr);
-            String[] DR = dr.split("\\.");
-            functions.age(DR[2]);
+            //String[] DR = dr.split("\\.");
+            functions.age(dr);
         }
         else{
             System.out.println("Неправильно введена дата рождения");

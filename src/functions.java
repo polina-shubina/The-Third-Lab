@@ -1,3 +1,6 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.time.Year;
 
 public class functions {
@@ -51,11 +54,30 @@ public class functions {
         }
     }
 
-    public static void age(String year){
-        int todayYear = Year.now().getValue();
+    public static void age(String dr){
+        LocalDateTime now = LocalDateTime.now();
+        int todayYear = now.getYear();
+        int todayMonth = now.getMonthValue();
+        int today = now.getDayOfMonth();
+        String[] DR = dr.split("\\.");
         try{
-            int i = Integer.parseInt(year.trim());
-            form(todayYear-i);
+            int day = Integer.parseInt(DR[0].trim());
+            int month = Integer.parseInt(DR[1].trim());
+            int year = Integer.parseInt(DR[2].trim());
+            if(todayMonth < month) {
+                form(todayYear - year - 1);
+            }
+            else if(todayMonth == month) {
+                if(today < day) {
+                    form(todayYear - year - 1);
+                }
+                else{
+                    form(todayYear - year);
+                }
+            }
+            else{
+                form(todayYear - year);
+            }
         }
         catch (NumberFormatException nfe) {
             System.out.println("Возникла ошибка с определением возраста");
